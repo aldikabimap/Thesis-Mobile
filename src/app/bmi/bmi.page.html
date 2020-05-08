@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>BMI</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list inset class="form">
+      <p style="margin-top: 0px;">
+        BMI atau Body mass index adalah impian banyak orang. 
+        Memiliki berat badan ideal dengan tinggi badan dan massa tubuh yang ideal juga menjadi salah satu penanda bahwa 
+        seseorang telah berhasil menjalani pola hidup sehat. Maka dari itu, cara menghitung berat badan ideal 
+        wanita maupun pria banyak dicari oleh mereka yang ingin mengetahui berat tubuh ideal.
+      </p>
+      <ion-item>
+          <ion-label position="floating">Weight (KG)</ion-label>
+          <ion-input type="text" [(ngModel)]="formData.weight" placeholder="Input Weight"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Height (CM)</ion-label>
+          <ion-input type="text" [(ngModel)]="formData.height" placeholder="Input Height"></ion-input>
+      </ion-item>
+      <!-- <ion-item class="button-login"> -->
+          <ion-button expand="block" round mode="ios" block (click)="doCalculate()">Calculate</ion-button>
+      <!-- </ion-item> -->
+      <ion-card class="welcome-card" *ngIf="dataBMI.BMI">
+        <ion-card-content>
+          <p>Nilai BMI : {{dataBMI.BMI}}</p>
+        </ion-card-content>
+        <ion-card-content>
+          <p>{{dataBMI.keterangan}}</p>
+        </ion-card-content>
+      </ion-card>
+  </ion-list>
+</ion-content>

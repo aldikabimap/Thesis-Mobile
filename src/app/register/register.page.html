@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list inset class="form">
+        <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input type="text" [(ngModel)]="formData.name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Weight</ion-label>
+            <ion-input type="number" [(ngModel)]="formData.weight"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Height</ion-label>
+            <ion-input type="number" [(ngModel)]="formData.height"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Username</ion-label>
+            <ion-input type="text" [(ngModel)]="formData.username"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" [(ngModel)]="formData.password"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Alergies</ion-label>
+            <ion-select placeholder="Select One" [(ngModel)]="formData.alergies">
+              <ion-select-option value="1">Seafood</ion-select-option>
+              <ion-select-option value="2">Egg</ion-select-option>
+              <ion-select-option value="3">Chicken</ion-select-option>
+              <ion-select-option value="4">More</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Motivation</ion-label>
+            <ion-textarea rows="5" [(ngModel)]="formData.motivation"></ion-textarea>
+        </ion-item>
+        <!-- <ion-item class="button-login"> -->
+            <ion-button expand="block" round mode="ios" block (click)="goSignup()">Sign Up</ion-button>
+        <!-- </ion-item> -->
+    </ion-list>
+</ion-content>

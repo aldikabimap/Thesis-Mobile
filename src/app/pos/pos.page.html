@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Detail Diet Tips
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+      <div style="padding: 0px 20px;" [innerHTML]="formData.description"></div>
+      <h3 style="padding: 0px 20px;" *ngIf="listPlan?.length > 0">list Plan</h3>
+      <ul *ngIf="listPlan?.length > 0">
+        <li *ngFor="let data of listPlan">{{data.plan_name}}</li>
+      </ul>
+      <div style="padding: 0px 20px;" *ngIf="formData.have_plan == 1">
+        *Already Set Diet
+      </div>
+      <ion-button *ngIf="formData.have_plan == 0" expand="block" (click)="setDiet()">
+        Set Diet
+      </ion-button>
+    </ion-list>
+</ion-content>

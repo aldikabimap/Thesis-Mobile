@@ -1,0 +1,47 @@
+<ion-header no-border>
+    <ion-toolbar>
+        <ion-title>Profile Saya</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content no-padding>
+    <ion-card class="avatar-area">
+        <ion-card-content>
+            <img src="./assets/imgs/user.png">
+            <h3>{{data.name}}</h3>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-list class="biodata-area">
+        <ion-item>
+            <h2 item-start>Berat</h2>
+            <h2 slot="end">{{data.weight}} KG</h2>
+        </ion-item>
+        <ion-item>
+            <h2 item-start>Tinggi</h2>
+            <h2 slot="end">{{data.height}} CM</h2>
+        </ion-item>
+        <div style="padding: 0px 20px;padding-top: 5px;">
+            <h5 style="margin:0px;" item-start>Motivation</h5>
+            <h6 style="margin:0px;" slot="end">{{data.motivation}}</h6>
+        </div>
+    </ion-list>
+
+</ion-content>
+
+<ion-footer no-border>
+    <ion-toolbar>
+        <ion-grid class="button-logout">
+            <ion-row>
+                <ion-col>
+                    <div style="height: 40px;">
+                        <ion-button color="primary" style="width: 48%;float: left;" size="default" expand="block" round (click)="goBMI()">Check BMI</ion-button>
+                        <ion-button color="primary" style="width: 48%;float: right;" size="default" expand="block" round (click)="goBMR()">Check BMR</ion-button>
+                    </div>
+                    <ion-button color="primary" size="default" expand="block" round (click)="goBooster()">Booster</ion-button>
+                    <ion-button color="primary" size="default" expand="block" round (click)="goUpdate()">Update Profile</ion-button>
+                    <ion-button color="danger" size="default" expand="block" round (click)="goLogout()">Keluar</ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>

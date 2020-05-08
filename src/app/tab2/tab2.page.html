@@ -1,0 +1,26 @@
+<ion-content>
+  <div style="padding: 20px;">
+    <h3 *ngIf="datePlan.have_plan == '0'" style="text-align: center;">You dont have plan</h3>
+    <h3 *ngIf="datePlan.have_plan == '1'" style="text-align: center;">Diet Date</h3>
+    <div class="tanggal" *ngIf="datePlan.have_plan == '1'">
+      <div class="tanggalNya" *ngFor="let data of datePlan.date;let i = index" [ngClass]="{'today': datePlan.day==i,'selected': data.selected}" (click)="getDetailDate(data,i)">
+        <span class="number">{{i+1}}</span>
+        <p *ngIf="datePlan.have_plan == '1'">
+          <span>{{(data.done/data.target)*100}}%</span>
+        </p>
+      </div>
+    </div>
+    <ion-list *ngIf="datePlan.have_plan == '1' && checkBox?.length > 0">
+      <h3 style="text-align: center;">List Target Day</h3>
+      <ion-item *ngFor="let entry of checkBox">
+        <ion-label *ngIf="is_today == 1">{{entry.plan_name}}</ion-label>
+        <ion-label *ngIf="entry.checked == 0 && is_today != 1">{{entry.plan_name}}</ion-label>
+        <ion-label *ngIf="entry.checked == 1 && is_today != 1"><s>{{entry.plan_name}}</s></ion-label>
+        <ion-checkbox *ngIf="is_today == 1" slot="end" [(ngModel)]="entry.checked"></ion-checkbox>
+      </ion-item>
+      <ion-button expand="block" (click)="updateTarget()" *ngIf="is_today == 1">
+        Update Target
+      </ion-button>
+    </ion-list>
+  </div>
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Goal Diet
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card">
+      <ion-card-header>
+        <ion-card-title>Android based application for diet plan and assistant</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-list>
+      <ion-list-header>
+        <ion-label>Weight Lose</ion-label>
+      </ion-list-header>
+      <ion-radio-group [(ngModel)]="lose_goals">
+        <ion-item *ngFor="let x of WeightLoss">
+          <ion-label>Lose {{x}}kg/month</ion-label>
+          <ion-radio slot="start" value="{{x}}"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+      <ion-button slot="end" style="float: right;margin-right: 15px;" (click)="searchData()">
+        Check
+      </ion-button>
+    </ion-list>
+</ion-content>

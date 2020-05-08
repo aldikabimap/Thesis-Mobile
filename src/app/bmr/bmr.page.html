@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>BMR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list inset class="form">
+    <p style="margin-top: 0px;">BMR atau basal metabolic rate adalah kebutuhan kalori yang tubuh Anda butuhkan untuk melakukan aktivitas basalnya.
+        Saat Anda tidur atau duduk dan tidak melakukan aktivitas apapun, tubuh tetap melakukan aktivitasnya, 
+        seperti memompa jantung, mencerna makanan, bernapas, memperbaiki sel tubuh, membuang racun dalam tubuh, 
+        mempertahankan suhu tubuh, dan lain sebagainya.</p>
+    <ion-item>
+      <ion-label position="floating">Usia</ion-label>
+      <ion-input type="text" [(ngModel)]="formData.usia" placeholder="Input Usia"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select placeholder="Select One" [(ngModel)]="formData.gender">
+        <ion-select-option value="L">Laki - Laki</ion-select-option>
+        <ion-select-option value="P">Perempuan</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Weight (KG)</ion-label>
+        <ion-input type="text" [(ngModel)]="formData.weight" placeholder="Input Weight"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Height (CM)</ion-label>
+        <ion-input type="text" [(ngModel)]="formData.height" placeholder="Input Height"></ion-input>
+    </ion-item>
+    <!-- <ion-item class="button-login"> -->
+        <ion-button expand="block" round mode="ios" block (click)="doCalculate()">Calculate</ion-button>
+    <!-- </ion-item> -->
+    <ion-card class="welcome-card" *ngIf="dataBMR.BMR">
+      <ion-card-content>
+        <p>Nilai BMR : {{dataBMR.BMR}}</p>
+      </ion-card-content>
+      <ion-card-content>
+        <p>{{dataBMR.keterangan}}</p>
+      </ion-card-content>
+    </ion-card>
+</ion-list>
+</ion-content>

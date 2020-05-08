@@ -1,0 +1,7 @@
+{
+  "name": "ino_kmeans",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

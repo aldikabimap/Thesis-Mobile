@@ -1,0 +1,33 @@
+
+.tanggalNya{
+    transition: background-color 0.5s ease;
+    display: inline-block;
+    width: calc(20% - 2px);
+    height: 50px;
+    border: 1px solid #e6e6e6;
+    .number{
+        text-align: center;
+        border-radius: 1px;
+        width: 21px;
+        height: 20px;
+        display: inline-block;
+    }
+    p{
+        margin: unset;
+        text-align: center;
+    }
+}  
+.tanggalNya:active {
+    background: #3880ffa1;
+}
+.selected{
+    background-color: #2473ff9e;
+}
+.today{
+    border: 2px solid #3880ff;
+    height: 51px;
+    width: calc(20% - 2px);
+    .number{
+        background-color: #3880ff;
+    }
+}
